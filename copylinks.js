@@ -15,7 +15,7 @@
   }
 
   var as = container.getElementsByTagName('a');
-  var i, link, title;
+  var i, link;
   var links = [];
   var baseUrl = document.location.protocol + '//' + document.location.hostname;
   for (i = 0; i < as.length; i++) {
