@@ -4,7 +4,7 @@
   var container;
 
   // Selected content.
-  if (range.endOffset > range.startOffset) {
+  if (range.endOffset != range.startOffset) {
     selectedFragment = range.cloneContents();
     container = document.createElement('DIV');
     container.appendChild(selectedFragment);
