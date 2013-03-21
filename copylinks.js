@@ -23,7 +23,7 @@
     // Filter out not interesting hrefs.
     if (link && link !== '#') {
       // Prepend baseUrl to relative hrefs.
-      if (link.indexOf('http://') === -1 && link.indexOf('https://')) {
+      if (link.indexOf('http://') === -1 && link.indexOf('https://') === -1) {
         link = baseUrl + (link.charAt(0) != '/' ? '/' : '') + link;
       }
 
