@@ -18,12 +18,15 @@
   var i, link;
   var links = [];
   var baseUrl = document.location.protocol + '//' + document.location.hostname;
+  var hasProtocol;
+
   for (i = 0; i < as.length; i++) {
     link = as[i].getAttribute('href');
     // Filter out not interesting hrefs.
     if (link && link !== '#') {
-      // Prepend baseUrl to relative hrefs.
-      if (link.indexOf('http://') === -1 && link.indexOf('https://') === -1) {
+      // Prepend baseUrl to urls without protocol.
+      hasProtocol = /^[^:]+:/.test(link);
+      if (!hasProtocol) {
         link = baseUrl + (link.charAt(0) != '/' ? '/' : '') + link;
       }
 
