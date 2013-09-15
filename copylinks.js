@@ -1,12 +1,14 @@
 (function() {
-  var range = window.getSelection().getRangeAt(0);
+  var selection = window.getSelection();
+  var range;
   var selectedFragment;
   var container;
 
-  // Selected content.
-  if (range.endOffset != range.startOffset) {
+  // Non-empty selection.
+  if (!selection.isCollapsed && selection.rangeCount > 0) {
+    range = selection.getRangeAt(0);
     selectedFragment = range.cloneContents();
-    container = document.createElement('DIV');
+    container = document.createElement('div');
     container.appendChild(selectedFragment);
   }
   else {
